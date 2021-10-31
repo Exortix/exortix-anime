@@ -21,7 +21,7 @@ $('#searchForm').on("input", (e) => {
 function getAnimes(query) {
     var url;
 
-    if (searchText.length < 3)
+    if (searchText.length < 2)
         url = `${BASE_URL}`;
     else
         url = `${BASE_URL}/search.html?keyword=${query}`
