@@ -19,7 +19,13 @@ $('#searchForm').on("input", (e) => {
 });
 
 function getAnimes(query) {
-    var url = `${BASE_URL}/search.html?keyword=${query}`;
+    var url;
+
+    if (searchText.length < 3)
+        url = `${BASE_URL}`;
+    else
+        url = `${BASE_URL}/search.html?keyword=${query}`
+
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url);
     
