@@ -30,7 +30,7 @@ $(document).ready(() => {
 });
 
 $( "#ep" ).change(function() {
-    window.location.href = `${window.location.origin}/anime/?id=${animeId}&ep=${Number(document.getElementById('ep').value)}`;
+    window.location.href = `${window.location.href.split('?')[0]}?id=${animeId}&ep=${Number(document.getElementById('ep').value)}`;
 });
 
 
@@ -48,7 +48,7 @@ function getAnime(animeId, animeEp) {
             var doc = parser.parseFromString(xhr.responseText, "text/html");
             var episodes = doc.querySelectorAll('.video-info-left ul.listing.items > li.video-block > a');
             if (Number(animeEp) > episodes.length || Number(animeEp) < 1) {
-                window.location.href = `${window.location.origin}/anime/?id=${animeId}&ep=1`;
+                window.location.href = `${window.location.href.split('?')[0]}?id=${animeId}&ep=1`;
             }
             
             episodes.forEach( (e,i) => {
@@ -72,7 +72,7 @@ function getAnime(animeId, animeEp) {
                 `<iframe id="embedvideo" src="https:${iframe_url}"sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" allowvr="yes"  allowfullscreen="true" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>`
             }
         } else
-            window.location.href = "../../";
+            window.location.href = "../";
     }};
     xhr.send();
 }

@@ -24,15 +24,10 @@ function getAnimes(query) {
     xhr.open("GET", url);
     
     xhr.onreadystatechange = function () {
-       if (xhr.readyState === 4) {
-          console.log(xhr.status);
-          console.log(xhr.responseText);
-          
-          
+       if (xhr.readyState === 4) {        
           var parser = new DOMParser();
           var doc = parser.parseFromString(xhr.responseText, "text/html");
           var animes = doc.querySelectorAll('ul.listing.items > li.video-block > a');
-          console.log(animes)
 
           let output = '';
           $.each(animes, (index, anime) => {
