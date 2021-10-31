@@ -1,0 +1,83 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Watch Anime</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous"
+        ></script>
+
+        <link rel="shortcut icon" type="image/jpg" href="../images/icon.ico"/>
+        <!-- Bootstrap CSS -->
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-md">
+                <div class="navbar-header">
+                    <a href="../" class="navbar-brand">Exortix Animes</a>
+                </div>
+                <a class="navbar-brand" href="../">Back</a>
+            </div>
+        </nav>
+        <center id="center">
+            <div id="mainer">
+                Episode
+                <select name="ep" id="ep"></select>
+                <button class="btn-toggle">Theme Toggle</button>
+                <div id="main"></div>
+            </div>
+        </center>
+
+        <script src="js/main.js"></script>
+        <script>
+            // Select the button
+            const btn = document.querySelector(".btn-toggle");
+            // Check for dark mode preference at the OS level
+            const prefersDarkScheme = window.matchMedia(
+                "(prefers-color-scheme: dark)"
+            );
+
+            // Get the user's theme preference from local storage, if it's available
+            const currentTheme = localStorage.getItem("theme");
+            // If the user's preference in localStorage is dark...
+            if (currentTheme == "dark") {
+                // ...let's toggle the .dark-theme class on the body
+                document.body.classList.toggle("dark-mode");
+                // Otherwise, if the user's preference in localStorage is light...
+            } else if (currentTheme == "light") {
+                // ...let's toggle the .light-theme class on the body
+                document.body.classList.toggle("light-mode");
+            }
+
+            // Listen for a click on the button
+            btn.addEventListener("click", function () {
+                // If the user's OS setting is dark and matches our .dark-mode class...
+                if (prefersDarkScheme.matches) {
+                    // ...then toggle the light mode class
+                    document.body.classList.toggle("light-mode");
+                    // ...but use .dark-mode if the .light-mode class is already on the body,
+                    var theme = document.body.classList.contains("light-mode")
+                        ? "light"
+                        : "dark";
+                } else {
+                    // Otherwise, let's do the same thing, but for .dark-mode
+                    document.body.classList.toggle("dark-mode");
+                    var theme = document.body.classList.contains("dark-mode")
+                        ? "dark"
+                        : "light";
+                }
+                // Finally, let's save the current preference to localStorage to keep using it
+                localStorage.setItem("theme", theme);
+            });
+        </script>
+    </body>
+</html>
