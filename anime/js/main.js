@@ -64,13 +64,8 @@ function getAnime(animeId, animeEp) {
             
             document.title = title;
 
-            if(deviceType() == "desktop") {   
-                document.getElementById('main').innerHTML += 
-                `<iframe id="embedvideo" src="https:${iframe_url}" allowvr="yes"  allowfullscreen="true" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>`           
-            } else {
-                document.getElementById('main').innerHTML += 
-                `<iframe id="embedvideo" src="https:${iframe_url}"sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" allowvr="yes"  allowfullscreen="true" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>`
-            }
+            document.getElementById('main').innerHTML += 
+            `<iframe id="embedvideo" src="https:${iframe_url}" allowvr="yes"  allowfullscreen="true" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>`           
         } else
             window.location.href = "../";
     }};

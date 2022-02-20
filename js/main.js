@@ -5,15 +5,13 @@ let pageNumber = searchParams.get('page');
 
 
 $(document).ready(() => {
-    let searchParams = new URLSearchParams(window.location.search);
-        if (!searchParams.has('page'))
-            window.location.href = `${window.location.href.split('?')[0]}?page=1`;
-        let pageNumber = searchParams.get('page');;
-        let searchText = $('#searchText').val();
-        getAnimes(searchText)
+    searchParams = new URLSearchParams(window.location.search);
+    if (!searchParams.has('page'))
+        window.location.href = `${window.location.href.split('?')[0]}?page=1`;
+    pageNumber = searchParams.get('page');;
+    searchText = $('#searchText').val();
+    getAnimes(searchText)
 });
-
-
 
 
 
@@ -22,7 +20,7 @@ $('#searchForm').submit( function(e){
 })
 
 let searchText = $('#searchText').val();
-getAnimes(searchText)
+// getAnimes(searchText)
 
 $('#searchForm').on("input", (e) => {
     searchText = $('#searchText').val();
@@ -63,7 +61,10 @@ function getAnimes(query) {
             `;
           });
           $('#animes > .row').html(output);
-          $('#pagination').html(pagination);
+          if ($('#searchText').val().length < 2)
+            $('#pagination').html(pagination);
+          else
+            $('#pagination').html('');
        }};
     
     xhr.send();

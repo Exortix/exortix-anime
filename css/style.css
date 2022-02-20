@@ -1,200 +1,256 @@
 th {
-    color: #fff;
-  }
-  caption {
-    padding-left: 10px;
-    position: relative;
-  }
-  
+	color: #fff;
+}
 
-  
-  text {
-    vertical-align: middle;
-  }
-  
-  caption {
-    display: none;
-  }
+caption {
+	padding-left: 10px;
+	position: relative;
+}
 
-  .anime h4 {
-    color: #000;
-    padding: 15px 0 10px 0;
-    overflow: hidden;
-    line-height: 18px;
-    font-weight: 700;
-    height: 54px;
-    font-size: 12px;
-    text-align:left;
-    text-overflow: ellipsis;
-  }
-  span.anime-overview {
-    color: #000;
-    margin: 0;
-    line-height: 12px;
-    font-weight: 500;
-    line-height: normal;
-    font-size: 12px;
-    text-align:left;
-    color: #999;
-  }
-  
-  img {
-    width: 100%;
-    height: auto;
-    max-width: fit-content;
-    flex: auto;
-  }
-  
-  .row,
-  .container {
-    text-align: center;
-    align-content: center;
-  }
-  
-  #anime-stats {
-    margin: 0 0em;
-    margin-bottom: 1em;
-    background-color: rgba(0, 0, 255, 0.1);
-  }
-  
-  #anime-stats .col {
-    padding: 0;
-  }
-  
-  p.anime-overview {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    line-height: 24px;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-  
-  form {
-    margin:0;
-  }
-  
-  
-  
-  #embedContainer {
-    margin-top: 2.5em;
-    margin-bottom: 2.5em;
-  }
-  
-  #embed iframe {
-    width: 100% !important;
-    height: 100% !important;
-  }
-  
-  #animes {
-    margin-top: 30px;
-  }
-  #animes > div.row {
-    row-gap: 15px;
-    column-gap: 1%;
-  }
-  div.col.anime {
-    transition-duration: 1ms;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    padding: 0;
-    flex: 1 15.8333%;
-  }
+text {
+	vertical-align: middle;
+}
 
-  /*============= section pagination =============== */
-#pagination {font-size: 12px;}
-#pagination a {text-decoration: none;
-  transition: all 0.3s linear 0s;
-  -webkit-transition: all 0.3s linear 0s;
-  -moz-transition: all 0.3s linear 0s;
-  -o-transition: all 0.3s linear 0s;
-  font-size: 100%;}
-#pagination .clr{clear: both;}
-#pagination .pagination ul{text-align:left;}
-#pagination .pagination ul li{display: inline-block;list-style: none;}
-#pagination .pagination ul li:first-child a{border-left: 1px solid #ddd;}
-#pagination .pagination ul li a{color: #999;display: block;padding: 8px 12px;text-align:center;border-right: 1px solid #ddd;border-bottom: 1px solid #ddd;border-top: 1px solid #ddd;}
-#pagination .pagination ul li a:hover, .pagination ul li.active a{background-color: #ffc119;color: #FFF !important;background-image: none;}
-#footer .row {padding: 45px 0 25px 0;}
+caption {
+	display: none;
+}
 
-  /* X-Small devices (portrait phones, less than 576px) */
-  @media (max-width: 575.98px) { 
-    #animes {
-      width: 360px;
-      max-width: 100%;
-      padding: 0 15px;
-    }
-    #embed {
-      padding: 10;
-      height: 259px;
-    }
-    div.col.anime {
-      flex: 1 46.333%;
-    }
-  }
-  /* Small devices (landscape phones, less than 768px) */
-  @media (min-width: 575.98px) and (max-width: 767.98px) { 
-    #embed {
-      padding: 10;
-      height: 337px;
-    }
-    div.col.anime {
-      flex: 1 31.666%;
-    }
-  }
-  
-  /* Medium devices (tablets, less than 992px) */
-  @media (min-width: 767.98px) and (max-width: 991.98px) {
-    #embed {
-      padding: 0;
-      height: 415px;
-    }
-    div.col.anime {
-      flex: 1 31.666%;
-    }
-  }
-  
-  /* Large devices (desktops, less than 1200px) */
-  @media (min-width: 991.98px) and  (max-width: 1199.98px) {
-    #embed {
-      padding: 0;
-      height: 530px;
-    }
-    div.col.anime {
-      flex: 1 15.8333%;
-    }
-  }
-  
-  /* X-Large devices (large desktops, less than 1400px) */
-  @media (min-width: 1199.98px) and (max-width: 1399.98px) {
-    #embed {
-      padding: 5em;
-      height: 720px;
-    }
-    div.col.anime {
-      flex: 1 15.8333%;
-    }
-  }
-  
-  @media (min-width: 1399.98px) {
-    #embed {
-      padding: 5em;
-      height: 800px;
-    }
-    div.col.anime {
-      flex: 1 15.8333%;
-    }
-  }
-  
-  /* XX-Large devices (larger desktops) */
-  /* No media query since the xxl breakpoint has no upper bound on its width */
+.anime h4 {
+	color: #000;
+	padding: 15px 0 10px 0;
+	overflow: hidden;
+	line-height: 18px;
+	font-weight: 700;
+	height: 54px;
+	font-size: 12px;
+	text-align: left;
+	text-overflow: ellipsis;
+}
 
-  body.dark-mode {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: aliceblue;
-  }
-  body.dark-mode .anime h4 {
-    color: aliceblue;
-  }
+span.anime-overview {
+	color: #000;
+	margin: 0;
+	line-height: 12px;
+	font-weight: 500;
+	line-height: normal;
+	font-size: 12px;
+	text-align: left;
+	color: #999;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	max-width: fit-content;
+	flex: auto;
+}
+
+.row,
+.container {
+	text-align: center;
+	align-content: center;
+}
+
+#anime-stats {
+	margin: 0 0em;
+	margin-bottom: 1em;
+	background-color: rgba(0, 0, 255, 0.1);
+}
+
+#anime-stats .col {
+	padding: 0;
+}
+
+p.anime-overview {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	line-height: 24px;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+form {
+	margin: 0;
+}
+
+#embedContainer {
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+}
+
+#embed iframe {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+#animes {
+	margin-top: 30px;
+}
+
+#animes>div.row {
+	row-gap: 30px;
+	column-gap: 1%;
+}
+
+div.col.anime {
+	transition-duration: 1ms;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 0;
+	flex: 1 15.8333%;
+}
+
+#footer .row {
+	padding: 45px 0 25px 0;
+}
+
+
+/*============= section pagination =============== */
+
+#pagination {
+	font-size: 12px;
+}
+
+#pagination a {
+	text-decoration: none;
+	transition: all 0.3s linear 0s;
+	-webkit-transition: all 0.3s linear 0s;
+	-moz-transition: all 0.3s linear 0s;
+	-o-transition: all 0.3s linear 0s;
+	font-size: 100%;
+}
+
+#pagination .clr {
+	clear: both;
+}
+
+#pagination .pagination ul {
+	text-align: left;
+}
+
+#pagination .pagination ul li {
+	display: inline-block;
+	list-style: none;
+}
+
+#pagination .pagination ul li:first-child a {
+	border-left: 1px solid #ddd;
+}
+
+#pagination .pagination ul li a {
+	color: #999;
+	display: block;
+	padding: 8px 12px;
+	text-align: center;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+
+#pagination .pagination ul li a:hover,
+.pagination ul li.active a {
+	background-color: #ffc119;
+	color: #FFF !important;
+	background-image: none;
+}
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {
+	#animes {
+		width: 360px;
+		max-width: 100%;
+		padding: 0 15px;
+	}
+	#animes>div.row {
+		column-gap: 2%;
+	}
+	#embed {
+		padding: 10;
+		height: 259px;
+	}
+	div.col.anime {
+		flex: 1 46.333%;
+	}
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (min-width: 575.98px) and (max-width: 767.98px) {
+	#embed {
+		padding: 10;
+		height: 337px;
+	}
+	div.col.anime {
+		flex: 1 31.666%;
+	}
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+
+@media (min-width: 767.98px) and (max-width: 991.98px) {
+	#embed {
+		padding: 0;
+		height: 415px;
+	}
+	div.col.anime {
+		flex: 1 31.666%;
+	}
+}
+
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (min-width: 991.98px) and (max-width: 1199.98px) {
+	#embed {
+		padding: 0;
+		height: 530px;
+	}
+	div.col.anime {
+		flex: 1 15.8333%;
+	}
+}
+
+
+/* X-Large devices (large desktops, less than 1400px) */
+
+@media (min-width: 1199.98px) and (max-width: 1399.98px) {
+	#embed {
+		padding: 5em;
+		height: 720px;
+	}
+	div.col.anime {
+		flex: 1 15.8333%;
+	}
+}
+
+@media (min-width: 1399.98px) {
+	#embed {
+		padding: 5em;
+		height: 800px;
+	}
+	div.col.anime {
+		flex: 1 15.8333%;
+	}
+}
+
+
+/* XX-Large devices (larger desktops) */
+
+
+/* No media query since the xxl breakpoint has no upper bound on its width */
+
+body.dark-mode {
+	background-color: rgba(0, 0, 0, 0.9);
+	color: aliceblue;
+}
+
+body.dark-mode .anime h4 {
+	color: aliceblue;
+}
