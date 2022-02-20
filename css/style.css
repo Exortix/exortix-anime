@@ -1,21 +1,12 @@
 th {
     color: #fff;
   }
-  
   caption {
     padding-left: 10px;
     position: relative;
   }
   
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #17a2b8;
-    color: #fff;
-    text-align: center;
-  }
+
   
   text {
     vertical-align: middle;
@@ -24,24 +15,34 @@ th {
   caption {
     display: none;
   }
-  
-  .anime {
-    background-color: rgba(0, 0, 255, 0.1);
-    box-shadow: 10px 5px 5px rgba(0, 0, 255, 0.1);
-    transition-duration: 1ms;
-    cursor: pointer;
+
+  .anime h4 {
+    color: #000;
+    padding: 15px 0 10px 0;
+    overflow: hidden;
+    line-height: 18px;
+    font-weight: 700;
+    height: 54px;
+    font-size: 12px;
+    text-align:left;
+    text-overflow: ellipsis;
   }
-  
-  .anime:hover {
-    background-color: rgba(255, 0, 0, 0.1);
-    box-shadow: 10px 5px 5px rgba(0, 0, 255, 0.1);
-    transition-duration: 50ms;
+  span.anime-overview {
+    color: #000;
+    margin: 0;
+    line-height: 12px;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 12px;
+    text-align:left;
+    color: #999;
   }
   
   img {
-    margin: 1em;
-    width: 15em;
+    width: 100%;
+    height: auto;
     max-width: fit-content;
+    flex: auto;
   }
   
   .row,
@@ -85,19 +86,62 @@ th {
     height: 100% !important;
   }
   
+  #animes {
+    margin-top: 30px;
+  }
+  #animes > div.row {
+    row-gap: 15px;
+    column-gap: 1%;
+  }
+  div.col.anime {
+    transition-duration: 1ms;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    padding: 0;
+    flex: 1 15.8333%;
+  }
+
+  /*============= section pagination =============== */
+#pagination {font-size: 12px;}
+#pagination a {text-decoration: none;
+  transition: all 0.3s linear 0s;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  font-size: 100%;}
+#pagination .clr{clear: both;}
+#pagination .pagination ul{text-align:left;}
+#pagination .pagination ul li{display: inline-block;list-style: none;}
+#pagination .pagination ul li:first-child a{border-left: 1px solid #ddd;}
+#pagination .pagination ul li a{color: #999;display: block;padding: 8px 12px;text-align:center;border-right: 1px solid #ddd;border-bottom: 1px solid #ddd;border-top: 1px solid #ddd;}
+#pagination .pagination ul li a:hover, .pagination ul li.active a{background-color: #ffc119;color: #FFF !important;background-image: none;}
+#footer .row {padding: 45px 0 25px 0;}
+
   /* X-Small devices (portrait phones, less than 576px) */
   @media (max-width: 575.98px) { 
+    #animes {
+      width: 360px;
+      max-width: 100%;
+      padding: 0 15px;
+    }
     #embed {
       padding: 10;
       height: 259px;
     }
+    div.col.anime {
+      flex: 1 46.333%;
+    }
   }
-  
   /* Small devices (landscape phones, less than 768px) */
   @media (min-width: 575.98px) and (max-width: 767.98px) { 
     #embed {
       padding: 10;
       height: 337px;
+    }
+    div.col.anime {
+      flex: 1 31.666%;
     }
   }
   
@@ -107,6 +151,9 @@ th {
       padding: 0;
       height: 415px;
     }
+    div.col.anime {
+      flex: 1 31.666%;
+    }
   }
   
   /* Large devices (desktops, less than 1200px) */
@@ -114,6 +161,9 @@ th {
     #embed {
       padding: 0;
       height: 530px;
+    }
+    div.col.anime {
+      flex: 1 15.8333%;
     }
   }
   
@@ -123,6 +173,9 @@ th {
       padding: 5em;
       height: 720px;
     }
+    div.col.anime {
+      flex: 1 15.8333%;
+    }
   }
   
   @media (min-width: 1399.98px) {
@@ -130,7 +183,18 @@ th {
       padding: 5em;
       height: 800px;
     }
+    div.col.anime {
+      flex: 1 15.8333%;
+    }
   }
   
   /* XX-Large devices (larger desktops) */
   /* No media query since the xxl breakpoint has no upper bound on its width */
+
+  body.dark-mode {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: aliceblue;
+  }
+  body.dark-mode .anime h4 {
+    color: aliceblue;
+  }
