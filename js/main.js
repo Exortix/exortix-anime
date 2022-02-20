@@ -62,11 +62,11 @@ function getAnimes(query) {
           });
           $('#animes > .row').html(output);
           if ($('#searchText').val().length < 2) {
-            $('#pagination1').html(pagination);
-            $('#pagination2').html($('#pagination1').clone());
+            $('#pagination2').html(pagination);
+            // $('#pagination2').html($('#pagination1').clone());
           }
           else {
-            $('#pagination1').html('');
+            // $('#pagination1').html('');
             $('#pagination2').html('');
           }
        }};
