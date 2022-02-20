@@ -110,11 +110,11 @@ div.col.anime {
 
 /*============= section pagination =============== */
 
-#pagination {
+.pag {
 	font-size: 12px;
 }
 
-#pagination a {
+.pag a {
 	text-decoration: none;
 	transition: all 0.3s linear 0s;
 	-webkit-transition: all 0.3s linear 0s;
@@ -123,24 +123,24 @@ div.col.anime {
 	font-size: 100%;
 }
 
-#pagination .clr {
+.pag .clr {
 	clear: both;
 }
 
-#pagination .pagination ul {
+.pag .pagination ul {
 	text-align: left;
 }
 
-#pagination .pagination ul li {
+.pag .pagination ul li {
 	display: inline-block;
 	list-style: none;
 }
 
-#pagination .pagination ul li:first-child a {
+.pag .pagination ul li:first-child a {
 	border-left: 1px solid #ddd;
 }
 
-#pagination .pagination ul li a {
+.pag .pagination ul li a {
 	color: #999;
 	display: block;
 	padding: 8px 12px;
@@ -150,8 +150,8 @@ div.col.anime {
 	border-top: 1px solid #ddd;
 }
 
-#pagination .pagination ul li a:hover,
-.pagination ul li.active a {
+.pag .pagination ul li a:hover,
+.pag .pagination ul li.active a {
 	background-color: #ffc119;
 	color: #FFF !important;
 	background-image: none;
