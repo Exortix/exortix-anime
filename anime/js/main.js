@@ -1,4 +1,4 @@
-BASE_URL = "https://gogoplay1.com/videos/"
+BASE_URL = "https://gogohd.net/videos/"
 
 var iframe_url = ""
 

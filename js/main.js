@@ -1,4 +1,4 @@
-BASE_URL = "https://gogoplay1.com"
+BASE_URL = "https://gogohd.net"
 
 let searchParams = new URLSearchParams(window.location.search);
 let pageNumber = searchParams.get('page');
