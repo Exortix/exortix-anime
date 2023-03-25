@@ -1,4 +1,4 @@
-BASE_URL = "https://gogohd.net"
+BASE_URL = "https://anihdplay.com"
 
 let searchParams = new URLSearchParams(window.location.search);
 let pageNumber = searchParams.get('page');
@@ -15,7 +15,7 @@ $(document).ready(() => {
 
 
 
-$('#searchForm').submit( function(e){ 
+$('#searchForm').submit(function (e) {
     e.preventDefault();
 })
 
@@ -38,38 +38,39 @@ function getAnimes(query) {
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url);
-    
-    xhr.onreadystatechange = function () {
-       if (xhr.readyState === 4) {        
-          var parser = new DOMParser();
-          var doc = parser.parseFromString(xhr.responseText, "text/html");
-          var animes = doc.querySelectorAll('ul.listing.items > li.video-block > a');
-          var pagination = doc.querySelector("#main_bg > div:nth-child(5) > div > div.vc_row.wpb_row.vc_row-fluid.vc_custom_1404913114846 > div:nth-child(3)")
 
-          let output = '';
-          $.each(animes, (index, anime) => {
-            id = anime.pathname.split('/').pop().split('-')
-            id.pop()
-            id = id.join('-')
-            ep = anime.pathname.split('/').pop().split('-').pop()
-            output += `
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(xhr.responseText, "text/html");
+            var animes = doc.querySelectorAll('ul.listing.items > li.video-block > a');
+            var pagination = doc.querySelector("#main_bg > div:nth-child(5) > div > div.vc_row.wpb_row.vc_row-fluid.vc_custom_1404913114846 > div:nth-child(3)")
+
+            let output = '';
+            $.each(animes, (index, anime) => {
+                id = anime.pathname.split('/').pop().split('-')
+                id.pop()
+                id = id.join('-')
+                ep = anime.pathname.split('/').pop().split('-').pop()
+                output += `
                 <div onclick="window.location.href = 'anime/?id=${id}&ep=${ep}'" class="col anime rounded">
                     <img class = "rounded" src = "${anime.querySelector('img').src}"/>
                     <h4>${anime.querySelector('div.name').innerText}</h4>
                     <span class="anime-overview">${(anime.querySelector('.meta') != null) ? anime.querySelector('.meta').innerText : ''}</span>
                 </div>
             `;
-          });
-          $('#animes > .row').html(output);
-          if ($('#searchText').val().length < 2) {
-            $('#pagination2').html(pagination);
-            // $('#pagination2').html($('#pagination1').clone());
-          }
-          else {
-            // $('#pagination1').html('');
-            $('#pagination2').html('');
-          }
-       }};
-    
+            });
+            $('#animes > .row').html(output);
+            if ($('#searchText').val().length < 2) {
+                $('#pagination2').html(pagination);
+                // $('#pagination2').html($('#pagination1').clone());
+            }
+            else {
+                // $('#pagination1').html('');
+                $('#pagination2').html('');
+            }
+        }
+    };
+
     xhr.send();
 }
